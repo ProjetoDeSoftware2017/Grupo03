@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Trabalho Dani</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+    <div class="content">
+        <h2>Escolha um modo de busca</h2>
+        <a class="button" href="cidades">Buscar por cidade</a>
+        <a class="button" href="regioes">Buscar por região</a>
+    </div>
+</body>
+</html>
