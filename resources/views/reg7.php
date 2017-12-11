@@ -5,11 +5,13 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="ie=edge">
 <title>Trabalho Dani</title>
-<link rel="stylesheet" href="<?php echo asset('css/main.css')?>" >
-
+<link rel="stylesheet" href="<?php echo asset('css/myLoc.css')?>" > 
+<!--<link rel="stylesheet" href="<?php echo asset('css/main.css')?>" > 
+-->
    <script async defer
    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUH0DYewNGZ2hxpdAxRO4Q-wefLYROkDA">
     </script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
 
 </head>
 <body>
@@ -24,13 +26,16 @@
 
    endforeach ;
    $cid_1=$cid[1] ;
-  
+$cid_2=$cid[2] ;
+echo "<br>charts : ";
+print($cid_2[0]); print($cid_2[1]);print($cid_2[2]);print($cid_2[3]);
 ?>
 
 
 
     <div class="content">
     <h2>Resultado</h2>
+ <h2>Teste</h2>
     <div class="mapa" id="map" ></div> 
     </div>
 
@@ -45,11 +50,12 @@ window.onload = getMyLocation;
 
 function getMyLocation() {
 	if (navigator.geolocation) {
-                 
-		navigator.geolocation.getCurrentPosition(
+                
+	  	navigator.geolocation.getCurrentPosition(
 			showMap//,//displayLocation, 
 			//displayError
-                       );
+                     );
+            
           //  showMap(position.coords);
 	}
 	else {
@@ -153,10 +159,29 @@ function addMarker(map, latlong, title, content) {
 
 
  </script>
-   <script>
+ <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['corechart']});
+      google.charts.setOnLoadCallback(drawChart);
 
-          
-   </script>
+      function drawChart() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['Task', 'Hours per Day'],
+          ['Work',     11],
+          ['Eat',      2],
+          ['Commute',  2],
+          ['Watch TV', 2],
+          ['Sleep',    7]
+        ]);
+
+        var options = {
+          title: 'My Daily Activities'
+        };
+
+      
+      }
+    </script>
  
 
 
